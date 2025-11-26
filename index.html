@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="10X Bizz - Scale your business 10X faster with data-driven digital marketing. Expert copywriting, SEO, social media strategy, and workflow automation.">
+    <meta property="og:title" content="10X Bizz - Digital Marketing Agency">
+    <meta property="og:description" content="Transform your business with expert digital marketing services">
+    <meta property="og:type" content="website">
+    <title>10X Bizz - Scale Your Business 10X Faster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0F172A;
+            --bg-card: #1E293B;
+            --accent-blue: #3B82F6;
+            --accent-emerald: #10B981;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-emerald);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--bg-dark);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-emerald);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-emerald);
+            border: 1px solid var(--accent-emerald);
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            border: 1px solid #EF4444;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 3rem 2rem 1.5rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            color: var(--text-secondary);
+        }
+
+        /* UTM Tracker */
+        .utm-tracker {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            max-width: 300px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .utm-tracker.show {
+            display: block;
+        }
+
+        .utm-tracker h4 {
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+        }
+
+        .utm-tracker p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .utm-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                padding: 2rem;
+                transition: right 0.3s;
+                border-top: 1px solid rgba(59, 130, 246, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .utm-tracker {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">10X Bizz</div>
+            <button class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content fade-in">
+            <h1>Scale Your Business 10X Faster</h1>
+            <p>Data-driven digital marketing strategies that deliver real results. From SEO to automation, we transform your online presence into a revenue-generating machine.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Book Free Consultation</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title fade-in">
+            <h2>Our Services</h2>
+            <p>Comprehensive digital marketing solutions tailored to 10X your growth</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <i class="fas fa-pen-fancy service-icon"></i>
+                <h3>Copywriting</h3>
+                <p>Persuasive, conversion-focused content that turns readers into customers. From landing pages to email campaigns, we craft words that sell.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-users service-icon"></i>
+                <h3>Social Strategy</h3>
+                <p>Build engaged communities and amplify your brand voice. Strategic social media management that drives real engagement and growth.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-search service-icon"></i>
+                <h3>SEO Optimization</h3>
+                <p>Dominate search rankings and get found by your ideal customers. Technical SEO, content optimization, and link building that delivers results.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-cogs service-icon"></i>
+                <h3>Workflow Automation</h3>
+                <p>Save time and scale operations with intelligent automation. From email sequences to CRM integration, we streamline your business processes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title fade-in">
+            <h2>Let's 10X Your Business</h2>
+            <p>Book a free consultation and discover how we can transform your digital presence</p>
+        </div>
+        <form class="contact-form fade-in" action="https://formspree.io/f/xnnyrbgr" method="POST" id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="service">Service Interest *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="copywriting">Copywriting</option>
+                    <option value="social-strategy">Social Media Strategy</option>
+                    <option value="seo">SEO Optimization</option>
+                    <option value="automation">Workflow Automation</option>
+                    <option value="multiple">Multiple Services</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Tell us about your project *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <!-- Hidden UTM fields -->
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_content" id="utm_content">
+            <input type="hidden" name="utm_term" id="utm_term">
+            
+            <button type="submit" class="btn form-submit">Send Message</button>
+            <div class="form-message" id="formMessage"></div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>10X Bizz</h3>
+                <p>Transforming businesses through data-driven digital marketing strategies.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#services">Copywriting</a>
+                <a href="#services">Social Media Strategy</a>
+                <a href="#services">SEO Optimization</a>
+                <a href="#services">Workflow Automation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> hello@10xbizz.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 100</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 10X Bizz. All rights reserved. | <a href="#" style="display: inline;">Privacy Policy</a> | <a href="#" style="display: inline;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- UTM Tracker Panel -->
+    <div class="utm-tracker" id="utmTracker">
+        <button class="utm-close" onclick="closeUTM()">&times;</button>
+        <h4><i class="fas fa-chart-line"></i> Traffic Source</h4>
+        <div id="utmData"></div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // UTM Parameter Tracking
+        function getUTMParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = {
+                utm_source: urlParams.get('utm_source') || 'direct',
+                utm_medium: urlParams.get('utm_medium') || 'none',
+                utm_campaign: urlParams.get('utm_campaign') || 'none',
+                utm_content: urlParams.get('utm_content') || 'none',
+                utm_term: urlParams.get('utm_term') || 'none'
+            };
+
+            // Store in sessionStorage
+            sessionStorage.setItem('utmParams', JSON.stringify(utmParams));
+
+            // Populate hidden form fields
+            document.getElementById('utm_source').value = utmParams.utm_source;
+            document.getElementById('utm_medium').value = utmParams.utm_medium;
+            document.getElementById('utm_campaign').value = utmParams.utm_campaign;
+            document.getElementById('utm_content').value = utmParams.utm_content;
+            document.getElementById('utm_term').value = utmParams.utm_term;
+
+            // Display UTM tracker if parameters exist
+            if (urlParams.has('utm_source') || urlParams.has('utm_medium') || urlParams.has('utm_campaign')) {
+                displayUTMTracker(utmParams);
+            }
+
+            return utmParams;
+        }
+
+        function displayUTMTracker(params) {
+            const tracker = document.getElementById('utmTracker');
+            const dataDiv = document.getElementById('utmData');
+            
+            let html = '';
+            if (params.utm_source !== 'direct') html += `<p><strong>Source:</strong> ${params.utm_source}</p>`;
+            if (params.utm_medium !== 'none') html += `<p><strong>Medium:</strong> ${params.utm_medium}</p>`;
+            if (params.utm_campaign !== 'none') html += `<p><strong>Campaign:</strong> ${params.utm_campaign}</p>`;
+            if (params.utm_content !== 'none') html += `<p><strong>Content:</strong> ${params.utm_content}</p>`;
+            if (params.utm_term !== 'none') html += `<p><strong>Term:</strong> ${params.utm_term}</p>`;
+            
+            dataDiv.innerHTML = html;
+            tracker.classList.add('show');
+        }
+
+        function closeUTM() {
+            document.getElementById('utmTracker').classList.remove('show');
+        }
+
+        // Form Handling - Allow default submission to Formspree
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = contactForm.querySelector('.form-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Let the form submit naturally to Formspree
+            // Formspree will handle the redirect and confirmation
+        });
+
+        // Initialize UTM tracking on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            getUTMParameters();
+        });
+
+        // Show UTM tracker with keyboard shortcut (Alt + U)
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey && e.key === 'u') {
+                const stored = sessionStorage.getItem('utmParams');
+                if (stored) {
+                    displayUTMTracker(JSON.parse(stored));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
